@@ -10,7 +10,11 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232f5d3f'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23eef3df'%3EB%3C/text%3E%3C/svg%3E">
   <!--
     ZWARE BIERENAVOND 2026 - zelfstandig HTML-bestand, geen externe bestanden.
-    Bron: lijst_info_aangevuld.xlsx, Sheet1. Namen en percentages zijn overgenomen.
+    Bron: prijzen zware bieren - Google Spreadsheets.pdf, pagina 1.
+    Kolom 1 = bestelnummer; kolom 3 = exacte naam; kolom 8 = alcohol%; kolom 9 = kleur.
+    Leverancierscodes, prijzen, opmerkingen en bonnen zijn niet overgenomen.
+    Bestaande ids en Nieuw-labels zijn alleen voor eenduidig dezelfde bieren behouden.
+    Voor nieuwe/onzekere varianten is isNew=false (niet bevestigd in de PDF).
     Alle bierdata staan in het blok <script id="beer-data" type="application/json">.
     Wijzig een bestaande id NIET bij correcties aan naam, kleur of bestelnummer:
     de proeflijst gebruikt die stabiele id, niet de positie of het bestelnummer.
@@ -374,7 +378,7 @@
     <section class="intro" aria-labelledby="page-title">
       <div class="intro-copy"><h1 id="page-title" tabindex="-1">De bierkaart.</h1><p>Ontdek, kies en bestel op nummer.</p></div>
       <div class="catalogue-facts" aria-label="Ons aanbod">
-        <span><b id="total-stat">52</b> bieren</span><span><b id="new-stat">16</b> nieuw</span><span><b id="free-stat">7</b> alcoholvrij</span>
+        <span><b id="total-stat">53</b> bieren</span><span><b id="new-stat">13</b> nieuw</span><span><b id="free-stat">7</b> alcoholvrij</span>
       </div>
     </section>
     <div id="storage-warning" class="storage-warning" role="status" hidden></div>
@@ -391,7 +395,7 @@
       </div>
       <div class="filter-row">
         <div id="color-filters" class="color-filters" role="group" aria-label="Filter op kleur"></div>
-        <button id="only-new" class="new-filter" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Alleen nieuw<span id="new-filter-count" class="new-filter-count">16</span></button>
+        <button id="only-new" class="new-filter" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Alleen nieuw<span id="new-filter-count" class="new-filter-count">13</span></button>
       </div>
     </section>
     <div class="list-heading">
@@ -480,423 +484,431 @@
     </div>
   </dialog>
 
-  <!-- BEER DATA: de volledige bierlijst, rechtstreeks uit de aangeleverde Excel. -->
+  <!-- BEER DATA: de volledige bierlijst, rechtstreeks uit de aangeleverde PDF (kolommen 1, 3, 8, 9). -->
   <script type="application/json" id="beer-data">
 [
   {
-    "id": "b26-bootjes-bier",
+    "id": "b26-affligem-0-0",
     "number": 1,
-    "name": "Bootjes Bier",
-    "color": "amber",
-    "abv": 7,
-    "isNew": false
-  },
-  {
-    "id": "b26-duvel",
-    "number": 2,
-    "name": "Duvel",
+    "name": "affligem 0,0",
     "color": "blond",
-    "abv": 8.5,
-    "isNew": false
-  },
-  {
-    "id": "b26-duvel-666",
-    "number": 3,
-    "name": "Duvel 666",
-    "color": "blond",
-    "abv": 6.66,
-    "isNew": false
-  },
-  {
-    "id": "b26-kasteel-rouge",
-    "number": 4,
-    "name": "Kasteel Rouge",
-    "color": "rood",
-    "abv": 8,
-    "isNew": false
-  },
-  {
-    "id": "b26-la-chouffe-blond",
-    "number": 5,
-    "name": "La Chouffe Blond",
-    "color": "blond",
-    "abv": 8,
-    "isNew": false
-  },
-  {
-    "id": "b26-lucie",
-    "number": 6,
-    "name": "Lucie",
-    "color": "blond",
-    "abv": 8,
-    "isNew": false
-  },
-  {
-    "id": "b26-nonkel-pater",
-    "number": 7,
-    "name": "Nonkel Pater",
-    "color": "bruin",
-    "abv": 9,
-    "isNew": false
-  },
-  {
-    "id": "b26-seefbier",
-    "number": 8,
-    "name": "Seefbier",
-    "color": "amber",
-    "abv": 6.5,
-    "isNew": false
-  },
-  {
-    "id": "b26-super-cadix",
-    "number": 9,
-    "name": "Super Cadix",
-    "color": "blond",
-    "abv": 5.6,
-    "isNew": false
-  },
-  {
-    "id": "b26-fusee",
-    "number": 10,
-    "name": "Fusee",
-    "color": "amber",
-    "abv": 7.5,
+    "abv": 0,
     "isNew": true
   },
   {
-    "id": "b26-chimay-blauw",
-    "number": 11,
-    "name": "Chimay Blauw",
+    "id": "b26-black-pudding",
+    "number": 2,
+    "name": "BLACK PUDDING 33CL",
     "color": "bruin",
-    "abv": 9,
+    "abv": 11,
+    "isNew": true
+  },
+  {
+    "id": "b26-bolder-blond",
+    "number": 3,
+    "name": "bolder blond",
+    "color": "blond",
+    "abv": 7.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-bolder-bruin",
+    "number": 4,
+    "name": "bolder bruin",
+    "color": "bruin",
+    "abv": 8,
     "isNew": false
   },
   {
     "id": "b26-bolleke-de-koninck",
-    "number": 12,
-    "name": "Bolleke De Koninck",
+    "number": 5,
+    "name": "Bolleke De koninck",
     "color": "amber",
     "abv": 5.2,
     "isNew": false
   },
   {
-    "id": "b26-buffalo-stout",
-    "number": 13,
-    "name": "Buffalo Stout",
-    "color": "bruin",
-    "abv": 9,
-    "isNew": true
-  },
-  {
-    "id": "b26-hoegaarden-rosee",
-    "number": 14,
-    "name": "Hoegaarden Rosée",
-    "color": "rood",
-    "abv": 3,
-    "isNew": false
-  },
-  {
-    "id": "b26-lindemans-pecheresse",
-    "number": 15,
-    "name": "Lindemans Pecheresse",
-    "color": "rood",
-    "abv": 2.5,
-    "isNew": false
-  },
-  {
-    "id": "b26-lindemans-tarot-d-or",
-    "number": 16,
-    "name": "Lindemans Tarot d'Or",
-    "color": "blond",
-    "abv": 8,
-    "isNew": false
-  },
-  {
-    "id": "b26-lindemans-tarot-noir",
-    "number": 17,
-    "name": "Lindemans Tarot Noir",
-    "color": "rood",
-    "abv": 8,
+    "id": "b26-bootjes-bier",
+    "number": 6,
+    "name": "BOOTJESBIER 33CL",
+    "color": "amber",
+    "abv": 7,
     "isNew": false
   },
   {
     "id": "b26-brugse-zot",
-    "number": 18,
-    "name": "Brugse Zot",
+    "number": 7,
+    "name": "BRUGSE ZOT BLOND 33CL",
     "color": "blond",
     "abv": 6,
     "isNew": false
   },
   {
+    "id": "b26-chimay-blauw",
+    "number": 8,
+    "name": "CHIMAY BLAUW 9 33CL",
+    "color": "bruin",
+    "abv": 9,
+    "isNew": false
+  },
+  {
+    "id": "b26-chouffe-blond-0-0",
+    "number": 9,
+    "name": "CHOUFFE ALC. FREE 0.0% 24*33C",
+    "color": "blond",
+    "abv": 0,
+    "isNew": true
+  },
+  {
     "id": "b26-cornet",
-    "number": 19,
+    "number": 10,
     "name": "Cornet",
     "color": "blond",
     "abv": 8.5,
     "isNew": false
   },
   {
-    "id": "b26-vlaamse-leeuw-tripel",
-    "number": 20,
-    "name": "Vlaamse Leeuw Tripel",
+    "id": "b26-cornet-alcoholvrij",
+    "number": 11,
+    "name": "cornet alcoholvrij",
     "color": "blond",
-    "abv": 8.5,
+    "abv": 0.3,
+    "isNew": false
+  },
+  {
+    "id": "b26-duivelsbier",
+    "number": 12,
+    "name": "DUIVELSBIER 33CL",
+    "color": "blond",
+    "abv": 6,
     "isNew": true
   },
   {
-    "id": "b26-goedendag-blond",
-    "number": 21,
-    "name": "Goedendag Blond",
+    "id": "b26-duvel",
+    "number": 13,
+    "name": "DUVEL 33 CL",
     "color": "blond",
-    "abv": 8,
+    "abv": 8.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-duvel-666",
+    "number": 14,
+    "name": "DUVEL 666 33CL",
+    "color": "blond",
+    "abv": 6.66,
+    "isNew": false
+  },
+  {
+    "id": "b26-filou-tripel",
+    "number": 15,
+    "name": "Filou tripel",
+    "color": "blond",
+    "abv": 8.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-fusee",
+    "number": 16,
+    "name": "fusee",
+    "color": "amber",
+    "abv": 7.5,
+    "isNew": true
+  },
+  {
+    "id": "b26-goestingske",
+    "number": 17,
+    "name": "GOESTINGSKE 24x33CL",
+    "color": "amber",
+    "abv": 6,
     "isNew": true
   },
   {
     "id": "b26-gouden-carolus-classic",
-    "number": 22,
-    "name": "Gouden Carolus Classic",
+    "number": 18,
+    "name": "GOUDEN CAROLUS CLASSIC 33C",
     "color": "bruin",
     "abv": 8.5,
     "isNew": false
   },
   {
     "id": "b26-gouden-carolus-tripel",
-    "number": 23,
-    "name": "Gouden Carolus Tripel",
+    "number": 19,
+    "name": "GOUDEN CAROLUS TRIPEL 33CL",
     "color": "blond",
     "abv": 9,
     "isNew": false
   },
   {
-    "id": "b26-tripel-karmeliet",
-    "number": 24,
-    "name": "Tripel Karmeliet",
+    "id": "b26-hibou-civil",
+    "number": 20,
+    "name": "hibou civil",
     "color": "blond",
-    "abv": 8.4,
+    "abv": 5.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-hoegaarden-rosee",
+    "number": 21,
+    "name": "HOEGAARDEN ROSEE 25CL",
+    "color": "rood",
+    "abv": 3,
+    "isNew": false
+  },
+  {
+    "id": "b26-ijwit",
+    "number": 22,
+    "name": "IJWIT 33CL",
+    "color": "blond",
+    "abv": 6.5,
+    "isNew": true
+  },
+  {
+    "id": "b26-jungle-joy",
+    "number": 23,
+    "name": "JUNGLE JOY 33CL",
+    "color": "blond",
+    "abv": 5.9,
+    "isNew": false
+  },
+  {
+    "id": "b26-kasteel-rouge",
+    "number": 24,
+    "name": "KASTEELBIER ROUGE 33CL",
+    "color": "rood",
+    "abv": 8,
     "isNew": false
   },
   {
     "id": "b26-kasteel-tropical-0-0",
     "number": 25,
-    "name": "Kasteel Tropical 0.0",
+    "name": "KASTEELBIER TROPICAL 0.0 33C",
     "color": "blond",
     "abv": 0,
     "isNew": true
   },
   {
-    "id": "b26-sloeber",
+    "id": "b26-la-chouffe-blond",
     "number": 26,
-    "name": "Sloeber",
-    "color": "blond",
-    "abv": 7.5,
-    "isNew": true
-  },
-  {
-    "id": "b26-black-pudding",
-    "number": 27,
-    "name": "Black Pudding",
-    "color": "bruin",
-    "abv": 11,
-    "isNew": true
-  },
-  {
-    "id": "b26-duivelsbier",
-    "number": 28,
-    "name": "Duivelsbier",
-    "color": "blond",
-    "abv": 6,
-    "isNew": true
-  },
-  {
-    "id": "b26-goestingske",
-    "number": 29,
-    "name": "Goestingske",
-    "color": "amber",
-    "abv": 6,
-    "isNew": true
-  },
-  {
-    "id": "b26-omer-blond",
-    "number": 30,
-    "name": "Omer Blond",
+    "name": "LA CHOUFFE 33CL",
     "color": "blond",
     "abv": 8,
     "isNew": false
   },
   {
-    "id": "b26-chouffe-blond-0-0",
-    "number": 31,
-    "name": "Chouffe Blond 0.0",
+    "id": "b26-lefort-tripel",
+    "number": 27,
+    "name": "LEFORT TRIPEL 33CL",
     "color": "blond",
-    "abv": 0,
+    "abv": 8.8,
     "isNew": true
   },
   {
-    "id": "b26-sportzot",
-    "number": 32,
-    "name": "Sportzot",
-    "color": "blond",
-    "abv": 0.4,
+    "id": "b26-liefmans-0-0",
+    "number": 28,
+    "name": "Liefmans 0,0",
+    "color": "rood",
+    "abv": 0,
     "isNew": false
   },
   {
-    "id": "b26-strongbow-eld",
+    "id": "b26-liefmans-peach",
+    "number": 29,
+    "name": "LIEFMANS PEACH 25CL",
+    "color": "rood",
+    "abv": 3.8,
+    "isNew": false
+  },
+  {
+    "id": "b26-lindemans-pecheresse",
+    "number": 30,
+    "name": "LINDEMANS PECHERESSE 25CL",
+    "color": "rood",
+    "abv": 2.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-lindemans-tarot-d-or",
+    "number": 31,
+    "name": "LINDEMANS TAROT D'OR 25CL",
+    "color": "blond",
+    "abv": 8,
+    "isNew": false
+  },
+  {
+    "id": "b26-lindemans-tarot-noir",
+    "number": 32,
+    "name": "LINDEMANS TAROT NOIR 25CL",
+    "color": "rood",
+    "abv": 8,
+    "isNew": false
+  },
+  {
+    "id": "b26-lucie",
     "number": 33,
-    "name": "Strongbow Eld",
-    "color": "amber",
+    "name": "LUCIE 33CL",
+    "color": "blond",
+    "abv": 8,
+    "isNew": false
+  },
+  {
+    "id": "b26-lupulus-blanche",
+    "number": 34,
+    "name": "LUPULUS BLANCHE 33CL",
+    "color": "blond",
     "abv": 4.5,
     "isNew": false
   },
   {
-    "id": "b26-tripel-d-anvers",
-    "number": 34,
-    "name": "Tripel d'Anvers",
-    "color": "blond",
-    "abv": 8,
-    "isNew": false
-  },
-  {
-    "id": "b26-westmalle-tripel",
+    "id": "b26-lupulus-blond",
     "number": 35,
-    "name": "Westmalle Tripel",
+    "name": "LUPULUS BLOND 33CL",
     "color": "blond",
-    "abv": 9.5,
+    "abv": 8.5,
     "isNew": false
   },
   {
-    "id": "b26-zeezuiper",
+    "id": "b26-minerva",
     "number": 36,
-    "name": "Zeezuiper",
+    "name": "MINERVA 33CL",
+    "color": "blond",
+    "abv": 7,
+    "isNew": false
+  },
+  {
+    "id": "b26-nonkel-pater",
+    "number": 37,
+    "name": "NONKEL PATER 33CL",
+    "color": "bruin",
+    "abv": 9,
+    "isNew": false
+  },
+  {
+    "id": "b26-omer-blond",
+    "number": 38,
+    "name": "OMER BLOND 33CL",
     "color": "blond",
     "abv": 8,
     "isNew": false
   },
   {
     "id": "b26-orval",
-    "number": 37,
-    "name": "Orval",
+    "number": 39,
+    "name": "ORVAL 33CL",
     "color": "amber",
     "abv": 6.2,
     "isNew": false
   },
   {
     "id": "b26-piedboeuf-foncee",
-    "number": 38,
-    "name": "Piedboeuf Foncée",
+    "number": 40,
+    "name": "PIEDBOEUF FONCEE 33CL",
     "color": "bruin",
     "abv": 1.5,
     "isNew": true
   },
   {
-    "id": "b26-lefort-tripel",
-    "number": 39,
-    "name": "Lefort Tripel",
+    "id": "b26-seefbier",
+    "number": 41,
+    "name": "SEEFBIER 33CL",
+    "color": "amber",
+    "abv": 6.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-sloeber",
+    "number": 42,
+    "name": "SLOEBER 33CL",
     "color": "blond",
-    "abv": 8.8,
+    "abv": 7.5,
     "isNew": true
+  },
+  {
+    "id": "b26-sportzot",
+    "number": 43,
+    "name": "SPORTZOT 0.4 33CL",
+    "color": "blond",
+    "abv": 0.4,
+    "isNew": false
   },
   {
     "id": "b26-stella-0-0",
-    "number": 40,
-    "name": "Stella 0.0",
-    "color": "blond",
-    "abv": 0,
-    "isNew": true
-  },
-  {
-    "id": "b26-affligem-0-0",
-    "number": 41,
-    "name": "Affligem 0.0",
-    "color": "blond",
-    "abv": 0,
-    "isNew": true
-  },
-  {
-    "id": "b26-liefmans-peach-0-0",
-    "number": 42,
-    "name": "Liefmans Peach 0.0",
-    "color": "rood",
-    "abv": 0,
-    "isNew": true
-  },
-  {
-    "id": "b26-cornet-alcoholvrij",
-    "number": 43,
-    "name": "Cornet Alcoholvrij",
-    "color": "blond",
-    "abv": 0.3,
-    "isNew": false
-  },
-  {
-    "id": "b26-jungle-joy",
     "number": 44,
-    "name": "Jungle Joy",
+    "name": "STELLA 0.0% 25CL",
     "color": "blond",
-    "abv": 5.9,
-    "isNew": false
-  },
-  {
-    "id": "b26-zieke-geest",
-    "number": 45,
-    "name": "Zieke Geest",
-    "color": "blond",
-    "abv": 8,
-    "isNew": false
-  },
-  {
-    "id": "b26-ijwit",
-    "number": 46,
-    "name": "IJwit",
-    "color": "blond",
-    "abv": 6.5,
+    "abv": 0,
     "isNew": true
   },
   {
-    "id": "b26-lupulus-blond",
-    "number": 47,
-    "name": "Lupulus Blond",
-    "color": "blond",
-    "abv": 8.5,
+    "id": "b26-stoute-mokke",
+    "number": 45,
+    "name": "Stoute mokke",
+    "color": "bruin",
+    "abv": 9,
     "isNew": false
   },
   {
-    "id": "b26-lupulus-blanche",
-    "number": 48,
-    "name": "Lupulus Blanche",
-    "color": "blond",
+    "id": "b26-strongbow-gold-apple",
+    "number": 46,
+    "name": "strongbow gold apple",
+    "color": "amber",
     "abv": 4.5,
     "isNew": false
   },
   {
-    "id": "b26-minerva",
-    "number": 49,
-    "name": "Minerva",
+    "id": "b26-super-cadix",
+    "number": 47,
+    "name": "SUPER CADIX BIER 33CL",
     "color": "blond",
-    "abv": 7,
+    "abv": 5.6,
     "isNew": false
   },
   {
-    "id": "b26-bolder-bruin",
-    "number": 50,
-    "name": "Bolder Bruin",
-    "color": "bruin",
+    "id": "b26-tripel-d-anvers",
+    "number": 48,
+    "name": "TRIPEL D'ANVERS 33CL",
+    "color": "blond",
     "abv": 8,
     "isNew": false
   },
   {
-    "id": "b26-bolder-blond",
-    "number": 51,
-    "name": "Bolder Blond",
+    "id": "b26-tripel-karmeliet",
+    "number": 49,
+    "name": "tripel karmeliet",
     "color": "blond",
-    "abv": 7.5,
+    "abv": 8.4,
     "isNew": false
   },
   {
-    "id": "b26-hibou-civil",
-    "number": 52,
-    "name": "Hibou Civil",
+    "id": "b26-vlaamse-leeuw-tripel",
+    "number": 50,
+    "name": "VLAAMSCHE LEEUW TRIPEL 33C",
     "color": "blond",
-    "abv": 5.5,
+    "abv": 8.5,
+    "isNew": true
+  },
+  {
+    "id": "b26-westmalle-tripel",
+    "number": 51,
+    "name": "WESTMALLE TRIPEL 33CL",
+    "color": "blond",
+    "abv": 9.5,
+    "isNew": false
+  },
+  {
+    "id": "b26-zeezuiper",
+    "number": 52,
+    "name": "ZEEZUIPER 12x33CL OW",
+    "color": "blond",
+    "abv": 8,
+    "isNew": false
+  },
+  {
+    "id": "b26-zieke-geest",
+    "number": 53,
+    "name": "ZIEKE GEEST 33CL",
+    "color": "blond",
+    "abv": 8,
     "isNew": false
   }
 ]
